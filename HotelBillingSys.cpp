@@ -7,22 +7,22 @@ int billAmount=0;
 char selectAgain;
 int quant;
 int choice;
-//quantity
+//quantity of items
 int Qrooms=0, Qtowel=0, Qextrabed=0, Qshampoo=0, Qsoap=0, Qpasta=0, Qburger=0, Qnoodle=0, Qshake=0, Qchicken=0;
-//food items sold
+//sold items
 int Srooms=0, Stowel=0, Sextrabed=0, Sshampoo=0, Ssoap=0, Spasta=0, Sburger=0, Snoodle=0, Sshake=0, Schicken=0;
 //total price of items
 int Total_rooms=0, Total_towel=0, Total_extrabed=0, Total_shampoo=0, Total_soap=0, Total_pasta=0, Total_burger=0, Total_noodle=0, Total_shake=0, Total_chicken=0;
 
 struct owner{
-    char name[20];
-    int id_no;
+    string name;
+    string id_no;
 };
 
 void display(struct owner me);
 
 void pointer(int *ptr){
-    *ptr = 50;
+    *ptr = 22;
 }
 
 void inventory(){
@@ -407,9 +407,9 @@ int main(){
     struct owner me;
     cout<<"\nLogin..."<<endl;
     cout<<"Enter owner's name: ";
-    cin>>me.name;
+    getline(cin, me.name);
     cout<<"Enter ID number: ";
-    cin>>me.id_no;
+    getline(cin,me.id_no);
     password();
 
     int num1=4;
