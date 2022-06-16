@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int value,exit_c;
 char l_arrow = 16,r_arrow = 17;
 int totalBill;
 int billAmount=0;
@@ -55,12 +54,12 @@ void amenities(){
     int value;
     if(value<1 || value>5){
     item:
-    cout<<"\n\t\t\t Please select from the menu options";
-    cout<<"\n\t1) Room"<<endl;
-    cout<<"\t2) Towel"<<endl;
-    cout<<"\t3) Extra Bed"<<endl;
-    cout<<"\t4) Shampoo"<<endl;
-    cout<<"\t5) Soap"<<endl;
+    cout<<"\n\t\t Please select from the menu options";
+    cout<<"\n\t1) Room: Php 1200"<<endl;
+    cout<<"\t2) Towel: Php 100"<<endl;
+    cout<<"\t3) Extra Bed: Php 1600"<<endl;
+    cout<<"\t4) Shampoo: Php 140"<<endl;
+    cout<<"\t5) Soap: Php 140"<<endl;
     cout<<"\t>> ";
     cin>>value;
 
@@ -88,11 +87,11 @@ void amenities(){
     else if(value==2){
     item2:
         cout<<"\n\tEnter the number of towels you want: ";
-        billAmount=billAmount+120;
+        billAmount=billAmount+100;
         cin>>quant;
             if(Qtowel-Stowel >=quant){
                 Stowel=Stowel+quant;
-                Total_towel=Total_towel+quant*120;
+                Total_towel=Total_towel+quant*100;
                 cout<<"\n\t\t"<<quant<<" towel/towels have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
@@ -108,12 +107,12 @@ void amenities(){
     else if(value==3){
         item3:
             cout<<"\n\tEnter the number of extra bed you want: ";
-            billAmount=billAmount+140;
+            billAmount=billAmount+1600;
             cin>>quant;
 
             if(Qextrabed-Sextrabed >=quant){
                 Sextrabed=Sextrabed+quant;
-                Total_extrabed=Total_extrabed+quant*140;
+                Total_extrabed=Total_extrabed+quant*1600;
                 cout<<"\n\t\t"<<quant<<" extrabed have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
@@ -129,12 +128,12 @@ void amenities(){
     else if(value==4){
     item4:
             cout<<"\n\tEnter the number of shampoo you want: ";
-            billAmount=billAmount+120;
+            billAmount=billAmount+140;
             cin>>quant;
 
             if(Qshampoo-Sshampoo >=quant){
                 Sshampoo=Sshampoo+quant;
-                Total_shampoo=Total_shampoo+quant*120;
+                Total_shampoo=Total_shampoo+quant*140;
                 cout<<"\n\t\t"<<quant<<" shampoo/shampoos have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
@@ -150,12 +149,12 @@ void amenities(){
     else if(value==5){
     item5:
             cout<<"\n\tEnter the number of soap you want: ";
-            billAmount=billAmount+120;
+            billAmount=billAmount+140;
             cin>>quant;
 
             if(Qsoap-Ssoap >=quant){
                 Ssoap=Ssoap+quant;
-                Total_soap=Total_soap+quant*150;
+                Total_soap=Total_soap+quant*140;
                 cout<<"\n\t\t"<<quant<<" soap/soaps have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
@@ -170,7 +169,7 @@ void amenities(){
     }
 }
 else{
-                cout<<"\n\tYou have enter wrong value, please press s!"<<endl;
+                cout<<"\n\tYou have enter wrong value, please select 1-5!"<<endl;
                 goto item5;
 }
 }
@@ -179,11 +178,11 @@ void food(){
     if(value<1 || value>5){
     item:
     cout<<"\n\t\t\t Please select from the menu options";
-    cout<<"\n\t1) Pasta"<<endl;
-    cout<<"\t2) Burger"<<endl;
-    cout<<"\t3) Noodles"<<endl;
-    cout<<"\t4) Shake"<<endl;
-    cout<<"\t5) Chicken-roll"<<endl;
+    cout<<"\n\t1) Pasta: Php 250"<<endl;
+    cout<<"\t2) Burger: Php 120"<<endl;
+    cout<<"\t3) Noodles: Php 140"<<endl;
+    cout<<"\t4) Shake: Php 120"<<endl;
+    cout<<"\t5) Chicken-roll: Php 120"<<endl;
     cout<<"\t>> ";
     cin>>value;
 
@@ -292,7 +291,7 @@ void food(){
     }
 }
 else{
-                cout<<"\n\tYou have enter wrong value, please press s!"<<endl;
+                cout<<"\n\tYou have enter wrong value, please select 1-5!"<<endl;
                 goto item5;
 }
 }
@@ -388,14 +387,29 @@ void menu(){
     goto m;
 }
 }
+void password(){
+    string password;
+    int ch;
+        again:
+        cout<<"Enter password: ";
+        cin>>password;
+        if(password=="1234"){
+            cout<<"Correct password!"<<endl;
+        }
+        else{
+            cout<<"Incorrect password!"<<endl;
+            goto again;
+        }
+}
 
 int main(){
     struct owner me;
     cout<<"\nLogin..."<<endl;
     cout<<"Enter owner's name: ";
     cin>>me.name;
-    cout<<"Enter ID number:";
+    cout<<"Enter ID number: ";
     cin>>me.id_no;
+    password();
 
     int num1=4;
     pointer(&num1);
@@ -403,4 +417,3 @@ int main(){
 
     menu();
 }
-
