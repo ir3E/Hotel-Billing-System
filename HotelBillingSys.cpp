@@ -55,6 +55,7 @@ void amenities(){
     if(value<1 || value>5){
     item:
     cout<<"\n\t\t Please select from the menu options";
+    cout<<"\n\t\t ::Enter quantity one (1) at a time::"<<endl;
     cout<<"\n\t1) Room: Php 1200"<<endl;
     cout<<"\t2) Towel: Php 100"<<endl;
     cout<<"\t3) Extra Bed: Php 1600"<<endl;
@@ -65,14 +66,14 @@ void amenities(){
 
     if(value==1){
     item1:
-    cout<<"\n\tEnter the number of rooms you want: ";\
+    cout<<"\n\tEnter one room: ";\
     billAmount=billAmount+1200;
     cin>>quant;
 
         if(Qrooms-Srooms >=quant){
             Srooms=Srooms+quant;
             Total_rooms=Total_rooms+quant*1200;
-            cout<<"\n\t\t"<<quant<<" room/rooms have been alloted to you!"<<endl;
+            cout<<"\n\t\t"<<quant<<" room have been alloted to you!"<<endl;
             cout<<"\n\tDo you want to add more items, y or n?";
             cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -86,13 +87,13 @@ void amenities(){
     }
     else if(value==2){
     item2:
-        cout<<"\n\tEnter the number of towels you want: ";
+        cout<<"\n\tEnter one towel: ";
         billAmount=billAmount+100;
         cin>>quant;
             if(Qtowel-Stowel >=quant){
                 Stowel=Stowel+quant;
                 Total_towel=Total_towel+quant*100;
-                cout<<"\n\t\t"<<quant<<" towel/towels have been alloted to you!"<<endl;
+                cout<<"\n\t\t"<<quant<<" towel have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -106,14 +107,14 @@ void amenities(){
     }
     else if(value==3){
         item3:
-            cout<<"\n\tEnter the number of extra bed you want: ";
+            cout<<"\n\tEnter one extra bed: ";
             billAmount=billAmount+1600;
             cin>>quant;
 
             if(Qextrabed-Sextrabed >=quant){
                 Sextrabed=Sextrabed+quant;
                 Total_extrabed=Total_extrabed+quant*1600;
-                cout<<"\n\t\t"<<quant<<" extrabed have been alloted to you!"<<endl;
+                cout<<"\n\t\t"<<quant<<" extra bed have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -127,14 +128,14 @@ void amenities(){
     }
     else if(value==4){
     item4:
-            cout<<"\n\tEnter the number of shampoo you want: ";
+            cout<<"\n\tEnter one shampoo: ";
             billAmount=billAmount+140;
             cin>>quant;
 
             if(Qshampoo-Sshampoo >=quant){
                 Sshampoo=Sshampoo+quant;
                 Total_shampoo=Total_shampoo+quant*140;
-                cout<<"\n\t\t"<<quant<<" shampoo/shampoos have been alloted to you!"<<endl;
+                cout<<"\n\t\t"<<quant<<" shampoo have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -148,14 +149,14 @@ void amenities(){
     }
     else if(value==5){
     item5:
-            cout<<"\n\tEnter the number of soap you want: ";
+            cout<<"\n\tEnter one soap: ";
             billAmount=billAmount+140;
             cin>>quant;
 
             if(Qsoap-Ssoap >=quant){
                 Ssoap=Ssoap+quant;
                 Total_soap=Total_soap+quant*140;
-                cout<<"\n\t\t"<<quant<<" soap/soaps have been alloted to you!"<<endl;
+                cout<<"\n\t\t"<<quant<<" soap have been alloted to you!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -177,7 +178,8 @@ void food(){
     int value;
     if(value<1 || value>5){
     item:
-    cout<<"\n\t\t\t Please select from the menu options";
+    cout<<"\n\t\t Please select from the menu options";
+    cout<<"\n\t\t ::Enter quantity one (1) at a time::"<<endl;
     cout<<"\n\t1) Pasta: Php 250"<<endl;
     cout<<"\t2) Burger: Php 120"<<endl;
     cout<<"\t3) Noodles: Php 140"<<endl;
@@ -188,7 +190,7 @@ void food(){
 
     if(value==1){
     item1:
-    cout<<"\n\tEnter Pasta Quantity: ";
+    cout<<"\n\tEnter one pasta: ";
     billAmount=billAmount+250;
     cin>>quant;
         if(Qpasta-Spasta >=quant){
@@ -208,7 +210,7 @@ void food(){
     }  
     else if(value==2){
     item2:
-        cout<<"\n\tEnter Burger Quantity: ";
+        cout<<"\n\tEnter one burger: ";
         billAmount=billAmount+120;
         cin>>quant;
             if(Qburger-Sburger >=quant){
@@ -228,14 +230,14 @@ void food(){
     }
     else if(value==3){
         item3:
-            cout<<"\n\tEnter Noodle Quantity: ";
+            cout<<"\n\tEnter one noodle: ";
             billAmount=billAmount+140;
             cin>>quant;
 
             if(Qnoodle-Snoodle >=quant){
                 Snoodle=Snoodle+quant;
                 Total_noodle=Total_noodle+quant*140;
-                cout<<"\n\t\t"<<quant<<" noodles is the order!"<<endl;
+                cout<<"\n\t\t"<<quant<<" noodle is the order!"<<endl;
                 cout<<"\n\tDo you want to add more items, y or n?";
                 cin>>selectAgain;
                 if(selectAgain=='y'){
@@ -249,7 +251,7 @@ void food(){
     }
     else if(value==4){
     item4:
-            cout<<"\n\tEnter Shakes Quantity: ";
+            cout<<"\n\tEnter one shake: ";
             billAmount=billAmount+120;
             cin>>quant;
 
@@ -270,7 +272,7 @@ void food(){
     }
     else if(value==5){
     item5:
-            cout<<"\n\tEnter Chicken-roll Quantity: ";
+            cout<<"\n\tEnter one chicken-roll: ";
             billAmount=billAmount+120;
             cin>>quant;
 
@@ -389,7 +391,6 @@ void menu(){
 }
 void password(){
     string password;
-    int ch;
         again:
         cout<<"Enter password: ";
         cin>>password;
