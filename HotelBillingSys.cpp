@@ -356,10 +356,10 @@ void menu(){
 			cout<<"\t\t\t    "<<l_arrow<<" HOTEL BILLING SYSTEM "<<r_arrow<<endl;
 			cout<<"\t____________________________________________________________\n"<<endl;
 			for(int i=1; i<=5; i++){
-				cout<<"\t\t\tPress "<<i<<" to "<<option[i-1]<<endl;
+				cout<<"\t\t\t["<<i<<"] "<<option[i-1]<<endl;
 			}
 			cout<<"\n\t____________________________________________________________\n"<<endl;
-			cout<<"\t\t\tChoose an Option:";
+			cout<<"\t\t\tChoose an Option: ";
 			cin>>choice;
 
     switch(choice){
@@ -382,7 +382,7 @@ void menu(){
         case 5:
             exit(0);
         default:
-            cout<<"\n Please select the numbers mention above!";
+            cout<<"\n\tPlease select the numbers mention above!";
     }
     goto m;
 }
