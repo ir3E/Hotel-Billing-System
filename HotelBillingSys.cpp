@@ -15,11 +15,15 @@ int Srooms=0, Stowel=0, Sextrabed=0, Sshampoo=0, Ssoap=0, Spasta=0, Sburger=0, S
 int Total_rooms=0, Total_towel=0, Total_extrabed=0, Total_shampoo=0, Total_soap=0, Total_pasta=0, Total_burger=0, Total_noodle=0, Total_shake=0, Total_chicken=0;
 
 struct owner{
-    string name;
-    string id_no;
+    char name[100];
+    char add[100];
+    int phone;
+    int day;
+    int month;
+    int year;
 };
 
-void display(struct owner me);
+void computeStayDifference(struct owner, struct owner, struct owner, struct owner *);
 
 void pointer(int *ptr){
     *ptr = 22;
@@ -402,16 +406,45 @@ void password(){
             goto again;
         }
 }
+void computeStayDifference(struct owner me, struct owner stay1, struct owner stay2, struct owner *difference){
+    difference->day = stay1.day-stay2.day;
+    difference->month = stay1.month-stay2.month;
+    difference->year = stay2.year-stay1.year;
+}
 
 int main(){
-    struct owner me;
+    struct owner me, stay1, stay2, difference;
     cout<<"\nLogin..."<<endl;
-    cout<<"Enter owner's name: ";
-    getline(cin, me.name);
-    cout<<"Enter ID number: ";
-    getline(cin,me.id_no);
     password();
 
+    cout<<"\nEnter cutomer name: ";
+    cin>>me.name;
+    cout<<"Enter address: ";
+    cin>>me.add;
+    cout<<"Enter phone number: ";
+    cin>>me.phone;
+    cout<<"\nEnter check in date ";
+    cout<<"\nDay: ";
+    cin>>stay1.day;
+    cout<<"Month: ";
+    cin>>stay1.month;
+    cout<<"Year: ";
+    cin>>stay1.year;
+    cout<<"\nEnter check out date ";
+    cout<<"\nDay: ";
+    cin>>stay2.day;
+    cout<<"Month: ";
+    cin>>stay2.month;
+    cout<<"Year: ";
+    cin>>stay2.year;
+    
+    computeStayDifference(me, stay1, stay2, &difference);
+    cout<<"\nRemaining stay";
+    cout<<"\nDays:"<<difference.day;  
+    cout<<"\nMonths:"<<difference.month;
+    cout<<"\nYears:"<<difference.year;
+
+    cout<<"\nPointer"<<endl;
     int num1=4;
     pointer(&num1);
     cout<<num1<<endl;
